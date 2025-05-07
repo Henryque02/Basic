@@ -42,26 +42,22 @@
  int ehPrimo(int num) {
     for (int i = 2; i < num; i++)
     {
-        if (num % i == 1 )
+        if (num % i != 0 )
         {
-            /* code */
+            return num;
         }
-        
     }
-    
-
-    return num;
  }
  
  void desafio2() {
      printf("\n===== DESAFIO 2 =====\n");
      int n = 50; // Listar primos até 50
      printf("Números primos até %d:\n", n);
-     for (int i = 0; i < n; i++)
+     for (int j = 2; j < n; j++)
      {
-
+        ehPrimo(j);
      }
- }
+     }
  
  /* ========== DESAFIO 3: ALTERNATIVA AO SWITCH-CASE ==========
   * Objetivo: Implemente um menu de opções SEM usar switch-case.
