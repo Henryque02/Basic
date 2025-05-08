@@ -20,8 +20,10 @@
      printf("\n===== DESAFIO 1 =====\n");
     
      int numero, i;
+
      printf("Digite um numero: ");
      scanf("%d", &numero);
+
      for (i = 1; i < numero+1; i++)
      {
         printf("\n");
@@ -40,25 +42,38 @@
   */
  
  int ehPrimo(int num) {
-    for (int i = 2; i < num; i++)
+    int divisores = 0;
+    for (int i = 1; i < num+1; i++)
     {
-        if (num % i != 0 )
+        if (num % i == 0 )
         {
-            return num;
+            divisores++;
         }
-    }
  }
+ if (divisores == 2)
+ {
+    return 1;
+ }
+ else
+ {
+    return 0;
+ }
+}
  
- void desafio2() {
+ void desafio2()
+ {
      printf("\n===== DESAFIO 2 =====\n");
      int n = 50; // Listar primos até 50
      printf("Números primos até %d:\n", n);
-     for (int j = 2; j < n; j++)
+     for (int j = 2; j <= n; j++)
      {
-        ehPrimo(j);
+        if (ehPrimo(j))
+        {
+            printf("%d ", j);
+        }
      }
-     }
- 
+}
+
  /* ========== DESAFIO 3: ALTERNATIVA AO SWITCH-CASE ==========
   * Objetivo: Implemente um menu de opções SEM usar switch-case.
   * Use apenas if-else para criar um menu com 4 opções:
@@ -70,7 +85,8 @@
   * Este desafio testa seu conhecimento em estruturas condicionais aninhadas.
   */
  
- void desafio3() {
+ void desafio3() 
+ {
      printf("\n===== DESAFIO 3 =====\n");
      int opcao = 0;
      
@@ -94,11 +110,16 @@
   * Este desafio testa seu conhecimento em loops while e variáveis auxiliares.
   */
  
- void desafio4() {
+ void desafio4() 
+ {
      printf("\n===== DESAFIO 4 =====\n");
      int n = 10; // Calcular até o 10º termo
      printf("Sequência de Fibonacci até o %dº termo:\n", n);
-     // Implemente aqui
+    while ()
+    {
+        /* code */
+    }
+    
  }
  
  /* ========== DESAFIO 5: COMBINAÇÃO DE LOOPS ==========
@@ -110,14 +131,15 @@
   * Este desafio testa seu conhecimento em combinar diferentes tipos de loops.
   */
  
- void desafio5() {
+ void desafio5() 
+ {
      printf("\n===== DESAFIO 5 =====\n");
      // Implemente aqui
  }
  
  /* ========== DESAFIO 6: MESTRE DOS LOOPS ==========
   * Objetivo: Crie um programa que imprima um padrão de diamante usando asteriscos.
-  * Exemplo para n=5:
+  * Exemplo para n=4:
   *    *
   *   ***
   *  *****
@@ -129,20 +151,34 @@
   * Este desafio testa seu conhecimento avançado em loops aninhados.
   */
  
- void desafio6() {
+ void desafio6()
+ {
      printf("\n===== DESAFIO 6 =====\n");
      int n = 4; // Altura do diamante (metade)
-     // Implemente aqui
+     for (int i = 0; i < 2*n; i++)
+     {
+        for (int j = 0; j < 2; j++)
+        {
+            printf("*");
+        }
+        for (int k = 0; k < 2 ; k++)
+        {
+            printf("*");
+        }
+        
+     }
+     
  }
  
- int main() {
+ int main()
+ {
      printf("DESAFIOS DE PROGRAMAÇÃO EM C\n");
      printf("Implemente as soluções e teste seus conhecimentos!\n");
      
      // Descomente os desafios que você quer testar
      //desafio1(); (X)
-     desafio2();
-     // desafio3();
+     //desafio2();
+     desafio3();
      // desafio4();
      // desafio5();
      // desafio6();
