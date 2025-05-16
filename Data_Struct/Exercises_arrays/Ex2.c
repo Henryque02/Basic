@@ -16,10 +16,9 @@ int main(){
         printf("%d ", arr[i]);
     }
     printf("\nVetor inverso: ");
-    for (i = 0; i < 10; i++)
+    for (i = 9; i >= 0; i--)
     {
-        ;
+        printf(" %d ", arr[i]);
     }
-    
     return 0;
 }
