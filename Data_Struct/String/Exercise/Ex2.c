@@ -12,27 +12,22 @@ a mãe te ama
 
 int main()
 {
-    char frase[50];
-    int tamanho = 0, palindroma = 1;
+    char frase[50], frase_ajustada[50];
 
     printf("Digite uma frase: ");
     scanf("%49s[^\n]", frase);
-    tamanho = strlen(frase);
-    for (int i = 0; i < tamanho/2; i++)
+    
+    for (int i = 0; i < strlen(frase); i++)
     {
-        if (frase[i] != frase[tamanho - 1 - i])
+        if (frase[i] != '!' && frase[i] != '?' && frase[i] != ',' && frase[i] != ' ')
         {
-            palindroma = 0;
-            break;
+            frase_ajustada[i] = frase[i];
         }
+        
     }
-    if (palindroma)
-    {
-        printf("A frase e palindroma");
-    }
-    else
-        printf("A frase nao e palindroma!");
+    printf("%s", frase_ajustada);
 
     return 0;
 }
 
+//a && b
