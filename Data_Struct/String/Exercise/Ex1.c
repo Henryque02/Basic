@@ -39,3 +39,22 @@ int main()
 
   return 0;
 }
+
+void verificador_palindroma(int tamanho, char vetor[], int verificador)
+{
+  for (int i = 0; i < tamanho/2; i++)
+  {
+    if (tolower(vetor[i]) != tolower(vetor[tamanho - 1 - i]))
+    {
+      verificador = 0;
+      break;
+    }
+  }
+
+  if (verificador)
+  {
+    printf("A palavra e palindroma!");
+  }
+  else
+    printf("A palavra nao e palindroma!");
+}
