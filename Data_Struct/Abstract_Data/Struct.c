@@ -12,7 +12,7 @@ typedef struct
         int idade;
         char sexo;
         char nome[100];
-        DataNascimento;
+        DataNascimento data;
     }Pessoa;
     
     /*
@@ -23,8 +23,29 @@ typedef struct
         char nome[100];
     };*/
 
+    void imprimirPessoa(Pessoa p)
+    {
+        printf("\n\tNome: %s\n\tIdade: %d\n\tSexo: %c\n\tData de nascimento: %d/%d/%d\n\n", p.nome,p.idade,p.sexo,p.data.dia,p.data.mes,p.data.ano);
+    }
+
+    Pessoa LerDados()
+    {
+        Pessoa p;
+        printf("\nDigite seu nome: ");
+        fgets(p.nome, 100, stdin);
+        printf("Digite sua idade: ");
+        scanf(" %d",&p.idade);
+        printf("Digite seu sexo: ");
+        scanf(" %c",&p.sexo);
+        printf("Digite sua data de nascimento: ");
+        scanf("  %d %d %d",&p.data.dia,&p.data.mes, &p.data.ano);
+        scanf("%c");
+        
+        return p;
+    }
+
 int main(){
-    Pessoa pessoa1;
+    // Pessoa pessoa1;
     //struct Pessoa2 pessoa2;
 
     /*
@@ -32,15 +53,18 @@ int main(){
     pessoa1.sexo = 'f';
     strcpy(pessoa1.nome, "Maria");   
     */
-   printf("Digite seu nome: ");
-   fgets(pessoa1.nome, 100, stdin);
-   printf("Digite sua idade: ");
-   scanf(" %d",&pessoa1.idade);
-   printf("Digite seu sexo: ");
-   scanf(" %c",&pessoa1.sexo);
-   printf("Digite sua data de nascimento: ");
-   scanf("  %d %d %d",&pessoa1.dia,&pessoa1.mes, &pessoa1.ano);
-   printf("\n\nNome: %sIdade: %d\nSexo: %c\nData de Nascimento: %02d/%02d/%d", pessoa1.nome, pessoa1.idade, pessoa1.sexo, pessoa1.dia, pessoa1.mes, pessoa1.ano);
+   int i =0;
+   Pessoa pessoas[2];
+
+   for (i = 0; i < 2; i++)
+   {
+    pessoas[i] = LerDados();
+   }
+   
+   for (i = 0; i < 2; i++)
+   {
+    imprimirPessoa(pessoas[i]);
+   }
 
     return 0;
 }
